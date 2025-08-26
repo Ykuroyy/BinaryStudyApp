@@ -118,9 +118,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    minHeight: '100vh',
   },
   scrollContent: {
     flexGrow: 1,
+    paddingBottom: 50,
   },
   header: {
     alignItems: 'center',

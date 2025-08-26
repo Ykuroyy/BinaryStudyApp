@@ -1,0 +1,36 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* React Native Web ScrollView fix */
+[data-react-native-scrollview] {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+/* SafeAreaView Web compatibility */
+[data-react-native-safeareaview] {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Touchable opacity for web */
+[data-pressable="true"] {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+[data-pressable="true"]:hover {
+  opacity: 0.8;
+}

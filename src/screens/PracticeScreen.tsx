@@ -203,10 +203,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    minHeight: '100vh',
   },
   scrollView: {
     flex: 1,
     padding: 20,
+    paddingBottom: 50,
   },
   title: {
     fontSize: 28,
