@@ -1,20 +1,52 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import HomeScreen from './src/screens/HomeScreen';
+import StudyScreen from './src/screens/StudyScreen';
+import PracticeScreen from './src/screens/PracticeScreen';
+import ExamScreen from './src/screens/ExamScreen';
+import { RootStackParamList } from './src/types';
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <Stack.Navigator 
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#2196F3',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{ title: '2進法学習アプリ' }}
+        />
+        <Stack.Screen 
+          name="Study" 
+          component={StudyScreen} 
+          options={{ title: '学習モード' }}
+        />
+        <Stack.Screen 
+          name="Practice" 
+          component={PracticeScreen} 
+          options={{ title: '練習モード' }}
+        />
+        <Stack.Screen 
+          name="Exam" 
+          component={ExamScreen} 
+          options={{ title: '試験モード' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
