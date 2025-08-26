@@ -25,7 +25,12 @@ export default {
     },
     web: {
       favicon: './assets/favicon.png',
-      bundler: 'metro'
+      bundler: 'metro',
+      build: {
+        babel: {
+          include: ['@babel/plugin-proposal-export-namespace-from']
+        }
+      }
     }
   }
 };

@@ -1,0 +1,54 @@
+/* Custom Web Styles for 2進法マスター */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto !important; /* Override Expo's hidden overflow */
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+  overflow-y: auto !important;
+}
+
+/* ScrollView Web fixes */
+[data-react-scroll-view="true"] {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+/* SafeAreaView compatibility */
+[data-react-safe-area-view="true"] {
+  height: 100vh;
+  overflow-y: auto !important;
+}
+
+/* TouchableOpacity web interaction */
+[data-pressable="true"] {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+[data-pressable="true"]:hover {
+  opacity: 0.8;
+}
+
+[data-pressable="true"]:active {
+  opacity: 0.6;
+}
+
+/* Ensure content is scrollable */
+body > div {
+  overflow-y: auto !important;
+}
+
+/* Override any overflow hidden */
+* {
+  -webkit-overflow-scrolling: touch;
+}
